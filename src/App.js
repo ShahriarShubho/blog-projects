@@ -6,6 +6,8 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import LogIn from "./Components/LogIn/LogIn";
 import NotFound from "./Components/NotFound/NotFound";
+import AddBlog from "./Components/AddBolg/AddBlog";
+import ManageBlog from "./Components/ManageBlog/ManageBlog"
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,12 @@ function App() {
           </Route>
           <Route path="/logIn">
             <LogIn />
+          </Route>
+          <Route path="/addBlog">
+            <AddBlog/>
+          </Route>
+          <Route path="/manageBlog">
+            <ManageBlog/>
           </Route>
           <Route exact path="/">
            <Home/>
