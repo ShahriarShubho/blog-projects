@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import AllBlog from '../AllBlog/AllBlog'
+import React, { useEffect, useState } from "react";
+import AllBlog from "../AllBlog/AllBlog";
 const Blogs = () => {
-    const [blog, setBlog] = useState([])
+  const [blog, setBlog] = useState([]);
 
   useEffect(() => {
-    fetch("https://pumpkin-sundae-84698.herokuapp.com/products")
+    fetch("https://thawing-inlet-19227.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => setBlog(data));
   }, []);
@@ -13,7 +13,6 @@ const Blogs = () => {
     <section className="homeSection">
       <div className="container">
         <div className="row">
-
           {blog.length === 0 && (
             <div className="spinnerStyle  m-auto">
               <button className="btn btn-primary" type="button" disabled>
@@ -26,7 +25,7 @@ const Blogs = () => {
               </button>
             </div>
           )}
-          
+
           {blog.map((pd) => (
             <AllBlog blog={pd} key={pd._id}></AllBlog>
           ))}
@@ -34,6 +33,6 @@ const Blogs = () => {
       </div>
     </section>
   );
-  };
+};
 
 export default Blogs;

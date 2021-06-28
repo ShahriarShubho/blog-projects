@@ -7,7 +7,7 @@ const ManageBlog = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {     
-        fetch("http://localhost:5000/allBlogs")
+        fetch("https://thawing-inlet-19227.herokuapp.com/blogs")
           .then((response) => response.json())
           .then((data) => {
             setBlogs(data)
@@ -17,7 +17,8 @@ const ManageBlog = () => {
       }, [blogs]);
 
       const handleDelete = (id) => {
-          fetch(`http://localhost:5000/delete/${id}`, {
+        console.log(id)
+          fetch(`https://thawing-inlet-19227.herokuapp.com/delete/${id}`, {
               method: 'DELETE'
           })
           .then(response => response.json())

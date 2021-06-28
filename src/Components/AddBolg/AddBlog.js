@@ -35,7 +35,7 @@ const AddBlog = () => {
         img: file,
       };
   
-      fetch("http://localhost:5000/addBlog", {
+      fetch("https://thawing-inlet-19227.herokuapp.com/addBlog", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(eventData),

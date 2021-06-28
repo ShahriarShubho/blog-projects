@@ -8,6 +8,7 @@ import LogIn from "./Components/LogIn/LogIn";
 import NotFound from "./Components/NotFound/NotFound";
 import AddBlog from "./Components/AddBolg/AddBlog";
 import ManageBlog from "./Components/ManageBlog/ManageBlog"
+import SingleBlogs from "./Components/Home/SingleBlogs/SingleBlogs"
 function App() {
   return (
     <div className="App">
@@ -20,11 +21,14 @@ function App() {
           <Route path="/logIn">
             <LogIn />
           </Route>
-          <Route path="/addBlog">
+          <Route path="/addBlogs">
             <AddBlog/>
           </Route>
           <Route path="/manageBlog">
             <ManageBlog/>
+          </Route>
+          <Route path="/blogs/:id">
+            <SingleBlogs/>
           </Route>
           <Route exact path="/">
            <Home/>
