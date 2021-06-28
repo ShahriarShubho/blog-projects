@@ -18,8 +18,7 @@ const Header = () => {
 
         <Nav className="m-auto">
           <Nav.Link className="font-weight-bold" as={Link} to="/home"> Home</Nav.Link>
-          <Nav.Link className="font-weight-bold" as={Link} to="/addBlogs">Add Blog</Nav.Link>
-          <Nav.Link className="font-weight-bold" as={Link} to="/manageBlog">Manage Blog</Nav.Link>
+          <Nav.Link className="font-weight-bold" as={Link} to="/admin">Admin</Nav.Link>
           <Button className="btn-success font-weight-bold" as={Link} to="/logIn">LogIn</Button>
         </Nav>
 

@@ -1,18 +1,23 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
-import Home from "./Components/Home/Home/Home"
+import "./App.css";
+import Home from "./Components/Home/Home/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import LogIn from "./Components/LogIn/LogIn";
 import NotFound from "./Components/NotFound/NotFound";
-import AddBlog from "./Components/AddBolg/AddBlog";
-import ManageBlog from "./Components/ManageBlog/ManageBlog"
-import SingleBlogs from "./Components/Home/SingleBlogs/SingleBlogs"
+import SingleBlogs from "./Components/Home/SingleBlogs/SingleBlogs";
+import { createContext } from "react";
+import { useState } from "react";
+import PrivateRoute from "./Components/LogIn/PrivateRoute/PrivateRoute";
+import Admin from "./Components/Admin/Admin";
+
+export const UserContext = createContext();
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className="App">
-       <Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
         <Header />
         <Switch>
           <Route path="/home">
@@ -21,25 +26,22 @@ function App() {
           <Route path="/logIn">
             <LogIn />
           </Route>
-          <Route path="/addBlogs">
-            <AddBlog/>
-          </Route>
-          <Route path="/manageBlog">
-            <ManageBlog/>
-          </Route>
+          <PrivateRoute path="/admin">
+            <Admin />
+          </PrivateRoute>
           <Route path="/blogs/:id">
-            <SingleBlogs/>
+            <SingleBlogs />
           </Route>
           <Route exact path="/">
-           <Home/>
+            <Home />
           </Route>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
-        <Footer/>
+        <Footer />
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 
