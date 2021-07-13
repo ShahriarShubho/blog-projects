@@ -19,5 +19,6 @@ It is a Blog site the more informantion given belowe.
 **nodeJs, ExpressJS, MongoDB, .env**
 
 Here live site: [Rectro-Blog](https://rectro-blog.netlify.app/)
-You can visit the server code: [Rectro-Blog-server]("https://github.com/ShahriarShubho/blog-project-server")
+
+You can visit the server code: [Rectro-Blog-server](https://github.com/ShahriarShubho/blog-project-server)
 
